@@ -1,0 +1,26 @@
+const str = ("Games are awesome, I love games. What are your favorite games?".toUpperCase().replace(/[&!0-9\/\\#,+()$~%.'":*?<>{}]/g, '')) ;
+const chars = {};
+const charsfiltered = {};
+const arr = str.split (" ")
+
+for (let word of arr) {
+	  if (!chars[word]) {
+		chars[word] = 1;
+	}
+	 else {
+		chars [word]++;	
+	}
+}
+const over1Word = arr.filter(
+	(word) => chars[word] > 1
+);
+
+for (let word2 of over1Word) {
+	if (!charsfiltered[word2]) {
+		charsfiltered[word2] = 1;
+	}
+	 else{
+		charsfiltered [word2]++;
+	}
+}
+console.log(charsfiltered);
